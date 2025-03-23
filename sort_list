@@ -1,0 +1,28 @@
+# I have a list of numbers
+my_unsorted = [22, 34, 11, 5, 65, 4, 33, 77, 43]
+# I need to sort it in ascending or descending order
+# I need to write a method, called sort that will sort a given list in ascending or descending order
+def sort(unsorted, order):
+    sorted = []
+    # find the ordered_holder number in the list using a for loop
+    # keep storing the current ordered_holder in variable called 'ordered_holder'
+    # after the for loop finishes we are guaranteed the ordered_holder number in the current list
+    # move it from the unsorted to the sorted list
+
+    while len(unsorted) > 0:
+        ordered_holder = my_unsorted[0]
+        for num in unsorted:
+            if order == 0:
+                if num < ordered_holder:
+                    ordered_holder = num
+            elif order == 1:
+                if num > ordered_holder:
+                    ordered_holder = num
+        sorted.append(ordered_holder)
+        unsorted.remove(ordered_holder)
+    return sorted
+# It will take a list and binary switch, 0 or 1, to indicate ascending or descending order. {0: Ascending, 1: descending}
+order = int(input("Enter 0 for ascending or 1 for descending: "))
+sorted = sort(my_unsorted, order)
+print(sorted)
+# It will return a sorted list
