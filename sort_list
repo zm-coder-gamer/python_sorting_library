@@ -10,7 +10,7 @@ def sort(unsorted, order):
     # move it from the unsorted to the sorted list
 
     while len(unsorted) > 0:
-        ordered_holder = my_unsorted[0]
+        ordered_holder = unsorted[0]
         for num in unsorted:
             if order == 0:
                 if num < ordered_holder:
