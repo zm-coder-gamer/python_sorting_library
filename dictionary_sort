@@ -1,11 +1,11 @@
-# I have a dictionary of items that have names and numbers, key value pairs
+# I have a dictionary of items that have key value pairs of names and number
 my_unsorted = {"A":22, "B":34, "C":11, "D":5, "E":65,"F":4, "G":33,"H": 77,"I": 43}
 # I need to sort it in ascending or descending order
 # I need to write a method, called sort that will sort a given dictionary in ascending or descending order
 def sort(unsorted, order):
     sorted = {}
-    # find the ordered_holder number in the dictionary using a for loop
-    # keep storing the current ordered_holder in variable called 'ordered_holder'
+    # find the ordered_holder item in the dictionary using a for loop
+    # ordered_holder will hold item with either the smallest or the largest value deending on the order parameter
     # after the for loop finishes we are guaranteed the ordered_holder item will be the smallest or the largest in the current dictionary
     # move it from the unsorted to the sorted dictionary
 
@@ -27,7 +27,8 @@ def sort(unsorted, order):
         unsorted.pop(ordered_holder_key)
 
     return sorted
-# It will take a list and binary switch, 0 or 1, to indicate ascending or descending order. {0: Ascending, 1: descending}
+
+# It will take a dictionary and binary switch, 0 or 1, to indicate ascending or descending order. {0: Ascending, 1: descending}
 order = int(input("Enter 0 for ascending or 1 for descending: "))
 sorted = sort(my_unsorted, order)
 print(sorted)
