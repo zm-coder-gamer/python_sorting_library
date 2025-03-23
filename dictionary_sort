@@ -1,0 +1,34 @@
+# I have a dictionary of items that have names and numbers, key value pairs
+my_unsorted = {"A":22, "B":34, "C":11, "D":5, "E":65,"F":4, "G":33,"H": 77,"I": 43}
+# I need to sort it in ascending or descending order
+# I need to write a method, called sort that will sort a given dictionary in ascending or descending order
+def sort(unsorted, order):
+    sorted = {}
+    # find the ordered_holder number in the dictionary using a for loop
+    # keep storing the current ordered_holder in variable called 'ordered_holder'
+    # after the for loop finishes we are guaranteed the ordered_holder item will be the smallest or the largest in the current dictionary
+    # move it from the unsorted to the sorted dictionary
+
+    while len(unsorted) > 0:
+        ordered_holder = list(my_unsorted.items())[0]
+        for item in unsorted.items():
+            item_value = item[1]
+            ordered_holder_value = ordered_holder[1]
+
+            if order == 0:
+                if item_value < ordered_holder_value:
+                    ordered_holder = item
+            elif order == 1:
+                if item_value > ordered_holder_value:
+                    ordered_holder = item
+
+        ordered_holder_key = ordered_holder[0]
+        sorted[ordered_holder_key] = ordered_holder[1]
+        unsorted.pop(ordered_holder_key)
+
+    return sorted
+# It will take a list and binary switch, 0 or 1, to indicate ascending or descending order. {0: Ascending, 1: descending}
+order = int(input("Enter 0 for ascending or 1 for descending: "))
+sorted = sort(my_unsorted, order)
+print(sorted)
+# It will return a sorted dictionary
